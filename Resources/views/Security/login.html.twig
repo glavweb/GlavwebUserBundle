@@ -1,0 +1,42 @@
+{% extends "ApplicationUserBundle::black_sonata_empty_layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    <div class="form-box" id="login-box">
+        <div class="header">{{ 'title_user_authentication'|trans({}) }}</div>
+        {% block user_login_form %}
+            <form action="{{ path("fos_user_security_check") }}" method="post" role="form">
+                <div class="body bg-gray">
+                    {% block user_login_error %}
+                        {% if error %}
+                            <div class="alert alert-danger alert-error">{{ error.messageKey|trans }}</div>
+                        {% endif %}
+                    {% endblock %}
+
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
+
+                    <div class="form-group control-group">
+                        <input type="text" class="form-control" id="username"  name="_username" value="{{ last_username }}" required="required" placeholder="{{ 'security.login.username'|trans }}"/>
+                    </div>
+
+
+                    <div class="form-group control-group">
+                        <input type="password" class="form-control" id="password" name="_password" required="required" placeholder="{{ 'security.login.password'|trans }}"/>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="checkbox" id="remember_me" name="_remember_me" value="on"/>
+                        {{ 'security.login.remember_me'|trans }}
+                    </div>
+
+                </div>
+
+                <div class="footer">
+                    <button type="submit" id="_submit" name="_submit" class="btn bg-olive btn-block">{{ 'security.login.submit'|trans }}</button>
+                    <p><a href="{{ path('fos_user_resetting_request') }}" class="text-center">{{ 'forgotten_password'|trans }}</a></p>
+                </div>
+            </form>
+        {% endblock %}
+    </div>
+{% endblock fos_user_content %}

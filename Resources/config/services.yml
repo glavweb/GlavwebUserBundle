@@ -1,0 +1,58 @@
+parameters:
+    application_user.admin.user.class:               Application\UserBundle\Admin\UserAdmin
+    application_user.admin.group.class:              Application\UserBundle\Admin\GroupAdmin
+    application_user.admin.interest.class:           Application\UserBundle\Admin\InterestAdmin
+    application_user.registration.form.type:         Application\UserBundle\Form\Type\RegistrationFormType
+    application_user.listener.registration.class:    Application\UserBundle\EventListener\RegistrationListener
+    application_user.editable_role_builder.class:    Application\UserBundle\Security\EditableRolesBuilder
+    application_user.form.type.security_roles.class: Application\UserBundle\Form\Type\SecurityRolesType
+#    security.access.privilege_voter.class:           Application\UserBundle\Security\Authorization\Voter\PrivilegeVoter
+
+services:
+    application_user.admin.user:
+        class: %application_user.admin.user.class%
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: dashboard.group_user, label: dashboard.label_user, label_translator_strategy: "sonata.admin.label.strategy.underscore"}
+        arguments:
+            - ~
+            - Application\UserBundle\Entity\User
+            - ~
+        calls:
+            - [setUserManager, ["@fos_user.user_manager"]]
+
+    application_user.admin.group:
+        class: %application_user.admin.group.class%
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: dashboard.group_user, label: dashboard.label_group, label_translator_strategy: "sonata.admin.label.strategy.underscore"}
+        arguments:
+            - ~
+            - Application\UserBundle\Entity\Group
+            - ~
+
+    application_user.registration.form.type:
+        class: %application_user.registration.form.type%
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: application_user_registration }
+
+    application_user.listener.registration:
+        class: %application_user.listener.registration.class%
+        arguments: [@router]
+        tags:
+            - { name: kernel.event_subscriber}
+
+    application_user.editable_role_builder:
+        class: %application_user.editable_role_builder.class%
+        arguments: [@security.context, @sonata.admin.pool, @translator, "%security.role_hierarchy.roles%"]
+
+    application_user.form.type.security_roles:
+        class: %application_user.form.type.security_roles.class%
+        arguments: [@application_user.editable_role_builder]
+        tags:
+            - { name: form.type, alias: sonata_security_roles}
+
+#    security.access.privilege_voter:
+#        class:  %security.access.privilege_voter.class%
+#        public: false
+#        tags:
+#           - { name: security.voter }

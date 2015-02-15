@@ -1,0 +1,28 @@
+{% extends "ApplicationUserBundle::black_sonata_empty_layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    <div class="form-box">
+        <div class="header">{{ 'title_user_registration'|trans }}</div>
+        {% block register_form %}
+
+            {{ form_start(form, {
+                'method' : 'POST',
+                'action' : path('fos_user_registration_register'),
+                'style': 'horizontal',
+                'widget_col' : 12,
+            }) }}
+
+                <div class="body bg-gray">
+                    {{ form_widget(form) }}
+                </div>
+
+                <div class="footer">
+                    <button type="submit" id="_submit" name="_submit" class="btn bg-olive btn-block">{{ 'registration.submit'|trans }}</button>
+                </div>
+            {{ form_end(form) }}
+        {% endblock %}
+    </div>
+{% endblock fos_user_content %}
+

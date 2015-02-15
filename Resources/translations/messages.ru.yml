@@ -1,0 +1,44 @@
+# Lists
+list:
+    label_id:             ID
+    label_roles:          Роли
+# Filters
+filter:
+    label_id:             ID
+    label_roles:          Роли
+
+# Forms
+form:
+    label_id:                  ID
+    label_roles:               Роли
+    label_locked:              Заблокирован
+    label_expired:             Просрочен
+    label_credentials_expired: Пароль устарел
+    label_groups:              Группы
+
+# Shows
+show:
+    label_id:    ID
+    label_roles: Роли
+
+
+# Model names
+dashboard:
+    label_user:  Пользователи
+    label_group: Группы
+
+# Breadcrumbs
+breadcrumb:
+    link_user_list:  Список пользователей
+    link_group_list: Список групп
+
+
+User:     Пользователь
+Groups:   Группы
+Group:    Группа
+Security: Безопасность
+General:  Главная
+Status:   Статус
+Roles:    Роли
+
+user_block_logout: Выйти

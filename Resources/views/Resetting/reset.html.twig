@@ -1,0 +1,26 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}Восстановление пароля{% endblock %}
+
+{% block before_fos_user_content %}
+    {% if invalid_username is defined %}
+        <h3 style="color: red; padding-bottom: 30px">{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}) }}</h3>
+    {% endif %}
+{% endblock %}
+
+{% block fos_user_content %}
+    {{ form_start(form, {
+        'method' : 'POST',
+        'action' : path('fos_user_resetting_reset', {'token': token}),
+        'style': 'inline',
+    }) }}
+        {{ form_widget(form) }}
+
+        <div>
+            <input type="submit" value="{{ 'resetting.reset.submit'|trans }}" class="btn btn-default" />
+        </div>
+    {{ form_end(form) }}
+
+{% endblock %}

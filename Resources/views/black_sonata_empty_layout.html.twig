@@ -1,0 +1,19 @@
+{% extends "SonataAdminBundle::empty_layout.html.twig" %}
+
+{% set admin_pool = default_admin_pool %}
+
+{% block body_attributes %}class="sonata-bc bg-black"{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        section.content {
+            background: #222;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    {% block fos_user_content %}
+    {% endblock fos_user_content %}
+{% endblock %}

@@ -1,0 +1,24 @@
+title_user_authentication : Вход
+title_user_registration : Регистрация
+forgotten_password : Забыли пароль?
+
+registration:
+    submit : Регистрация
+    check_admin : Поздравляем, вы успешно зарегистрировались. Теперь необходимо подождать подтверждие аккаунта администратором.
+security:
+    login:
+        username : Имя
+        password : Пароль
+        submit   : Войти
+
+# Form field placeholder labels
+form:
+    placeholder:
+        username: "Имя пользователя"
+        email: "Электронная почта"
+        password: "Пароль"
+        password_confirmation: "Подтвердите пароль"
+
+ROLE_USER: Роль пользователь
+
+user_block_logout: Выйти

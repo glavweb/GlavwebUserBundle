@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" />
+    </head>
+    <body>
+        {% for type, messages in app.session.flashbag.all() %}
+            {% for message in messages %}
+                <div class="flash-{{ type }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+        <div class="container">
+            <div class="row" style="text-align: center">
+                <div class="col-md-12"><h1>{% block title %}{% endblock %}</h1></div>
+            </div>
+
+            <div class="row" style="margin: 20px 0 40px 0">
+                <div class="col-md-12">
+                    <a href="{{ path('application_site_homepage') }}"><< Вернуться на Главную страницу</a>
+                </div>
+            </div>
+
+            <div class="row">
+                {% block before_fos_user_content %}{% endblock %}
+
+                <div class="jumbotron ">
+                {% block fos_user_content %}{% endblock fos_user_content %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
