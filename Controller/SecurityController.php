@@ -14,7 +14,7 @@ class SecurityController extends BaseSecurityController
         $securityContext = $this->container->get('security.context');
         if ($securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
             $router = $this->container->get('router');
-            return new RedirectResponse($router->generate('application_site_homepage'));
+            return new RedirectResponse($router->generate('glavweb_site_homepage'));
         }
 
         return parent::loginAction($request);

@@ -74,6 +74,6 @@ class RegistrationFormType extends BaseRegistrationFormType
      */
     public function getName()
     {
-        return 'application_user_registration';
+        return 'glavweb_user_registration';
     }
 }

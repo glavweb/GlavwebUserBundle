@@ -1,3 +1,3 @@
-application_user_registration_check_admin:
+glavweb_user_registration_check_admin:
     path:     /check-admin
     defaults: { _controller: GlavwebUserBundle:Registration:checkAdmin }
