@@ -1,8 +1,8 @@
 <?php
 
-namespace Application\UserBundle\Form\Transformer;
+namespace Glavweb\UserBundle\Form\Transformer;
 
-use Application\UserBundle\Security\EditableRolesBuilder;
+use Glavweb\UserBundle\Security\EditableRolesBuilder;
 use Symfony\Component\Form\DataTransformerInterface;
 
 class RestoreRolesTransformer implements DataTransformerInterface

@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\UserBundle\Controller;
+namespace Glavweb\UserBundle\Controller;
 
 use FOS\UserBundle\Controller\ProfileController as BaseProfileController;
 use FOS\UserBundle\FOSUserEvents;

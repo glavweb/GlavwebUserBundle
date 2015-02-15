@@ -1,10 +1,10 @@
 <?php
 
-namespace Application\UserBundle\Form\Type;
+namespace Glavweb\UserBundle\Form\Type;
 
 use FOS\UserBundle\Form\Type\RegistrationFormType as BaseRegistrationFormType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Application\UserBundle\Entity\User;
+use Glavweb\UserBundle\Entity\User;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
@@ -13,7 +13,7 @@ use Symfony\Component\Validator\Constraints;
 
 /**
  * Class RegistrationFormType
- * @package Application\UserBundle\Form\Type
+ * @package Glavweb\UserBundle\Form\Type
  */
 class RegistrationFormType extends BaseRegistrationFormType
 {

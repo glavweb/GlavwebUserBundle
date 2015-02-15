@@ -1,16 +1,13 @@
 <?php
 
-namespace Application\UserBundle\Admin;
+namespace Glavweb\UserBundle\Admin;
 
-use Doctrine\ORM\EntityRepository;
 use FOS\UserBundle\Model\UserManagerInterface;
 use Glavweb\AdminBundle\Admin\Admin as GlavwebAdmin;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
-use Application\UserBundle\Entity\User;
-use Symfony\Component\Form\Extension\Core\ChoiceList\SimpleChoiceList;
 
 class UserAdmin extends GlavwebAdmin
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\UserBundle\Admin;
+namespace Glavweb\UserBundle\Admin;
 
 use Glavweb\AdminBundle\Admin\Admin as GlavwebAdmin;
 use Sonata\AdminBundle\Form\FormMapper;

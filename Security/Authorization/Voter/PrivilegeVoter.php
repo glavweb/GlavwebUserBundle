@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\UserBundle\Security\Authorization\Voter;
+namespace Glavweb\UserBundle\Security\Authorization\Voter;
 
 use Symfony\Component\Security\Core\Authorization\Voter\VoterInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;

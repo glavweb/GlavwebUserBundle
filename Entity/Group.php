@@ -1,12 +1,12 @@
 <?php
 
-namespace Application\UserBundle\Entity;
+namespace Glavweb\UserBundle\Entity;
 
 use FOS\UserBundle\Model\Group as BaseGroup;
 
 /**
  * Class Group
- * @package Application\UserBundle\Entity
+ * @package Glavweb\UserBundle\Entity
  */
 class Group extends BaseGroup
 {

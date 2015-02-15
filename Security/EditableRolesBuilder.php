@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\UserBundle\Security;
+namespace Glavweb\UserBundle\Security;
 
 use Sonata\AdminBundle\Admin\Pool;
 use Symfony\Component\Security\Core\SecurityContextInterface;

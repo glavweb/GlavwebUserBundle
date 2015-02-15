@@ -1,12 +1,12 @@
 <?php
 
-namespace Application\UserBundle\Entity;
+namespace Glavweb\UserBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  * Class User
- * @package Application\UserBundle\Entity
+ * @package Glavweb\UserBundle\Entity
  */
 class User extends BaseUser
 {

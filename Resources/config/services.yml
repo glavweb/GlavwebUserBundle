@@ -1,12 +1,12 @@
 parameters:
-    application_user.admin.user.class:               Application\UserBundle\Admin\UserAdmin
-    application_user.admin.group.class:              Application\UserBundle\Admin\GroupAdmin
-    application_user.admin.interest.class:           Application\UserBundle\Admin\InterestAdmin
-    application_user.registration.form.type:         Application\UserBundle\Form\Type\RegistrationFormType
-    application_user.listener.registration.class:    Application\UserBundle\EventListener\RegistrationListener
-    application_user.editable_role_builder.class:    Application\UserBundle\Security\EditableRolesBuilder
-    application_user.form.type.security_roles.class: Application\UserBundle\Form\Type\SecurityRolesType
-#    security.access.privilege_voter.class:           Application\UserBundle\Security\Authorization\Voter\PrivilegeVoter
+    application_user.admin.user.class:               Glavweb\UserBundle\Admin\UserAdmin
+    application_user.admin.group.class:              Glavweb\UserBundle\Admin\GroupAdmin
+    application_user.admin.interest.class:           Glavweb\UserBundle\Admin\InterestAdmin
+    application_user.registration.form.type:         Glavweb\UserBundle\Form\Type\RegistrationFormType
+    application_user.listener.registration.class:    Glavweb\UserBundle\EventListener\RegistrationListener
+    application_user.editable_role_builder.class:    Glavweb\UserBundle\Security\EditableRolesBuilder
+    application_user.form.type.security_roles.class: Glavweb\UserBundle\Form\Type\SecurityRolesType
+#    security.access.privilege_voter.class:           Glavweb\UserBundle\Security\Authorization\Voter\PrivilegeVoter
 
 services:
     application_user.admin.user:
@@ -15,7 +15,7 @@ services:
             - {name: sonata.admin, manager_type: orm, group: dashboard.group_user, label: dashboard.label_user, label_translator_strategy: "sonata.admin.label.strategy.underscore"}
         arguments:
             - ~
-            - Application\UserBundle\Entity\User
+            - Glavweb\UserBundle\Entity\User
             - ~
         calls:
             - [setUserManager, ["@fos_user.user_manager"]]
@@ -26,7 +26,7 @@ services:
             - {name: sonata.admin, manager_type: orm, group: dashboard.group_user, label: dashboard.label_group, label_translator_strategy: "sonata.admin.label.strategy.underscore"}
         arguments:
             - ~
-            - Application\UserBundle\Entity\Group
+            - Glavweb\UserBundle\Entity\Group
             - ~
 
     application_user.registration.form.type:

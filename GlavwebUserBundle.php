@@ -1,14 +1,14 @@
 <?php
 
-namespace Application\UserBundle;
+namespace Glavweb\UserBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
- * Class ApplicationUserBundle
- * @package Application\UserBundle
+ * Class GlavwebUserBundle
+ * @package Glavweb\UserBundle
  */
-class ApplicationUserBundle extends Bundle
+class GlavwebUserBundle extends Bundle
 {
     /**
      * {@inheritdoc}

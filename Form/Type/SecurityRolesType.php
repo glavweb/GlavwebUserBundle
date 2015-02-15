@@ -10,10 +10,10 @@
  *
  */
 
-namespace Application\UserBundle\Form\Type;
+namespace Glavweb\UserBundle\Form\Type;
 
-use Application\UserBundle\Form\Transformer\RestoreRolesTransformer;
-use Application\UserBundle\Security\EditableRolesBuilder;
+use Glavweb\UserBundle\Form\Transformer\RestoreRolesTransformer;
+use Glavweb\UserBundle\Security\EditableRolesBuilder;
 use Symfony\Component\Form\AbstractType;
 
 use Symfony\Component\Form\FormBuilderInterface;
